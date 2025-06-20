@@ -1,0 +1,63 @@
+.login-container {
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+}
+
+.welcome-section {
+  background: linear-gradient(to bottom right, #004aad, #3b82f6);
+  color: white;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.welcome-icon {
+  font-size: 100px;
+  color: #fff;
+  animation: pop 0.8s ease;
+}
+
+.welcome-subtext {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 470px;
+  /* border-radius: 20px; */
+  background-color: #fff;
+  animation: fadeInRight 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+}
