@@ -22,11 +22,11 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const LoginPage = () => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [userType, setUserType] = useState("Admin");
   const [showToast, setShowToast] = useState(false);
-  const navigate = useNavigate(); // navigation hook
+  const navigate = useNavigate();
 
   const togglePassword = () => setShowPassword(!showPassword);
 
@@ -34,9 +34,32 @@ const LoginPage = () => {
     e.preventDefault();
     setShowToast(true);
 
-    // Simulate login logic with delay before navigation
     setTimeout(() => {
-      navigate("/dashboard"); // Redirect to dashboard
+      // Redirect based on user type
+      switch (userType) {
+        case "Admin":
+          navigate("/admin-dashboard");
+          break;
+        case "Principal":
+          navigate("/principal-dashboard");
+          break;
+        case "Teacher":
+          navigate("/Dashboard");
+          break;
+        case "Accountant":
+          navigate("/accountant-dashboard");
+          break;
+        case "Librarian":
+          navigate("/Librarymanagement");
+          break;
+        case "Parent":
+          navigate("/parent-dashboard");
+          break;
+        case "Student":
+          navigate("/StudentDashboard");
+          break;
+        
+      }
     }, 1000);
   };
 
@@ -132,4 +155,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;
